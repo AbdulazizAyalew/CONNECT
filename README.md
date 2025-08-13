@@ -49,30 +49,8 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 
 ---
 
-## 🔌 Example API Endpoints
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/laptops/` | GET | List laptops with filters |
-| `/laptops/<id>/` | GET | Laptop details with AI summary |
-| `/recommend/` | POST | Get AI-based laptop recommendations |
-| `/search/` | GET | Natural language search |
-| `/favorites/` | GET/POST/DELETE | Manage user favorites |
-| `/reviews/` | GET/POST | View or add reviews |
-| `/subscribe/` | GET/POST/PUT | Manage subscription preferences |
-
----
-
-## 📅 Development Timeline
-**Week 1 (Done)** – Planning & API/tool selection  
-**Week 2** – Backend models, authentication, CRUD endpoints  
-**Week 3** – Frontend templates, filtering, reviews, favorites  
-**Week 4** – AI & notification integration  
-**Week 5** – Final testing, deployment, and presentation  
-
----
-
 ## 📦 Installation & Setup
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/connect.git
+   git clone https://github.com/AbdulazizAyalew/connect.git
    cd connect
