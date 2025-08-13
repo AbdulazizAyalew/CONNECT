@@ -24,8 +24,8 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 ## 🛠️ Tech Stack
 **Backend:** Django, Django REST Framework  
 **Frontend:** HTML, CSS, JavaScript (Vanilla)  
-**Database:** PostgreSQL (Supabase Free Tier)  
-**AI & NLP:** Gemini AI (Free Tier), Hugging Face Models  
+**Database:** MySQL
+**AI & NLP:** Gemini AI (Free Tier) or Hugging Face Models  
 **Search:** Meilisearch (Open-Source)  
 **Notifications:** Firebase Cloud Messaging  
 **Email Alerts:** EmailJS  
