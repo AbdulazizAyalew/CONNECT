@@ -36,7 +36,7 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 - **Gemini AI API** – Generates simplified laptop specs and recommendations.
 - **Meilisearch** – Enables fast, natural language search.
 - **Firebase Cloud Messaging** – Sends browser push notifications.
-- **EmailJS** – Sends subscription-based email alerts.
+- **Django-mail** – Sends subscription-based email alerts.
 
 ---
 
