@@ -1,0 +1,23 @@
+# Python
+*.pyc
+__pycache__/
+.Python
+env/
+venv/
+pip-env/
+.env
+
+# Django
+*.log
+*.sqlite3
+media/
+static_collected/
+
+# IDEs and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Sensitive data (important for local development settings)
+settings_local.py
