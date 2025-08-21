@@ -27,6 +27,7 @@ urlpatterns = [
     path('notifications/',include('notifications.urls')),
     path('ai-features/',include('ai_features.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('users/', include('users.urls')),
 ]
 
 if settings.DEBUG:
