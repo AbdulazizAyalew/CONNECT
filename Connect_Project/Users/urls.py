@@ -1,6 +1,7 @@
 # users/urls.py
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    # Your URL patterns will go here
+    path('signup/', views.register, name='signup'),
 ]
