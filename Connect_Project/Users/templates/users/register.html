@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>Create your account</h1>
+<form method="post" novalidate>
+    {% csrf_token %}
+
+
+    {% if form.non_field_errors %}
+    <div style="color:red;">
+    {{ form.non_field_errors }}
+    </div>
+    {% endif %}
+
+
+    <p>
+    {{ form.username.label_tag }}<br>
+    {{ form.username }}
+    {% for error in form.username.errors %}
+    <div style="color:red;">{{ error }}</div>
+    {% endfor %}
+    </p>
+
+
+    <p>
+    {{ form.email.label_tag }}<br>
+    {{ form.email }}
+    {% for error in form.email.errors %}
+    <div style="color:red;">{{ error }}</div>
+    {% endfor %}
+    </p>
+
+
+    <p>
+    {{ form.password1.label_tag }}<br>
+    {{ form.password1 }}
+    {% for error in form.password1.errors %}
+    <div style="color:red;">{{ error }}</div>
+    {% endfor %}
+    </p>
+
+
+    <p>
+    {{ form.password2.label_tag }}<br>
+    {{ form.password2 }}
+    {% for error in form.password2.errors %}
+    <div style="color:red;">{{ error }}</div>
+    {% endfor %}
+    </p>
+
+
+    <button type="submit">Sign Up</button>
+</form>
+{% endblock %}
