@@ -9,7 +9,6 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save() # ✅ Creates user in auth_user
-            messages.success(request, "Your account has been created. Please log in.")
             return redirect("registration_success") # we'll add a quick login view in step 7
     else:
         form = CustomUserCreationForm()

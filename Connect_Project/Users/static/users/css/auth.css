@@ -1,0 +1,121 @@
+/* ===========================
+   Flush Left Horizontal Auth Form
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Card */
+.auth-container {
+    background: #222;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* Form Title */
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Form */
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Horizontal label + input container */
+.auth-container .form-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Label fully left */
+.auth-container .form-group label {
+    flex: 0 0 120px;  /* fixed width for labels */
+    text-align: left; /* flush left */
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 0;        /* remove default margin */
+}
+
+/* Input takes remaining space */
+.auth-container .form-group input {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input focus */
+.auth-container .form-group input:focus {
+    border: 1px solid #ff6f61;
+    box-shadow: 0 0 10px rgba(255,111,97,0.3);
+}
+
+/* Error messages */
+.error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-left: 120px; /* align under input */
+}
+
+/* Submit Button */
+button {
+    padding: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6f61, #ff8c42);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+/* Footer links */
+.auth-container .form-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.auth-container .form-footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-container .form-footer a:hover {
+    color: #ff8c42;
+}

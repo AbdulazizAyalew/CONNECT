@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Registration Successful</title>
-</head>
-<body>
-    <h2>🎉 Registration Successful!</h2>
-    <p>You have successfully created an account.</p>
-    <p>Please <a href="{% url 'login' %}">log in</a> to continue.</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Registration Success{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container" style="text-align:center;">
+    <h1>🎉 Registration Successful!</h1>
+    <p>You have successfully registered. Please login to continue.</p>
+    <a href="{% url 'login' %}">
+        <button type="button">Go to Login</button>
+    </a>
+</div>
+{% endblock %}
