@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Laptop Store</title>
+  <link rel="stylesheet" href="{% static 'users/css/home.css' %}">
+</head>
+<body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="logo">💻 Laptop Store</div>
+    
+    <div class="search-bar">
+      <input type="text" placeholder="Search laptops..." />
+      <button>🔍</button>
+    </div>
+    
+    <div class="profile">
+      <img src="" alt="Profile" />
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <p class="empty-message">🚫 No available laptops for now.</p>
+  </main>
+</body>
+</html>

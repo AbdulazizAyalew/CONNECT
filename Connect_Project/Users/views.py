@@ -18,3 +18,6 @@ def register(request):
 
 def registration_success(request):
     return render(request, "users/registration_success.html")
+
+def home(request):
+    return render(request, 'users/home.html')
