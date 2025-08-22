@@ -10,9 +10,12 @@ def register(request):
         if form.is_valid():
             form.save() # ✅ Creates user in auth_user
             messages.success(request, "Your account has been created. Please log in.")
-            return redirect("login") # we'll add a quick login view in step 7
+            return redirect("registration_success") # we'll add a quick login view in step 7
     else:
         form = CustomUserCreationForm()
 
 
-    return render(request, "users/base.html", {"form": form})
+    return render(request, "users/register.html", {"form": form})
+
+def registration_success(request):
+    return render(request, "users/registration_success.html")
