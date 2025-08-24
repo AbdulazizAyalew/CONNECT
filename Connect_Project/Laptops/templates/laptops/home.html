@@ -32,7 +32,23 @@
       <p>No laptops found.</p>
       {% endfor %}
     </div>
+    
   </section>
+   <div class="pagination">
+        {% if laptops.has_previous %}
+            <!-- <a href="?page=1">&laquo; First</a> -->
+            <a href="?page={{ laptops.previous_page_number }}">&laquo; Previous</a>
+        {% endif %}
+
+        <span class="current-page">
+            Page {{ laptops.number }} of {{ laptops.paginator.num_pages }}
+        </span>
+
+        {% if laptops.has_next %}
+            <a href="?page={{ laptops.next_page_number }}">Next &raquo;</a>
+            <!-- <a href="?page={{ laptops.paginator.num_pages }}">Last &raquo;</a> -->
+        {% endif %}
+    </div>
 </main>
 
 <footer class="footer">
