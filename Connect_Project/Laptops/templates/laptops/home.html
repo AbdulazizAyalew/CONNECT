@@ -1,41 +1,176 @@
+{% extends "base.html" %}
 {% load static %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".favorite-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+      });
+    });
+  });
+</script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Fixed Top Bar -->
-<header class="topbar">
-  <div class="topbar__inner">
-    <!-- Brand -->
-    <a class="brand" href="/home/">
-      Connect
-    </a>
+{% block content %}
+{% include "laptops/nav.html" %}  <!-- Your navbar -->
 
-    <!-- Search (wire up later to Meilisearch) -->
-    <form class="search" action="/search/" method="get">
-      <input name="q" type="text" placeholder="Search laptops…">
-      <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
-    </form>
+<main class="main-content">
+  <section class="laptop-list">
+    <h2>Latest Laptops</h2>
+    <div class="card-grid">
+      <!-- Example cards (later you’ll loop Django objects here) -->
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>MacBook Pro 2021</h3>
+        <p class="price">ETB 25,000</p>
+        <small>Addis Ababa</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Dell XPS 13</h3>
+        <p class="price">ETB 18,000</p>
+        <small>Oromia</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>HP Pavilion</h3>
+        <p class="price">ETB 12,000</p>
+        <small>Amhara</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Lenovo ThinkPad</h3>
+        <p class="price">ETB 15,500</p>
+        <small>Addis Ababa</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>MacBook Pro 2021</h3>
+        <p class="price">ETB 25,000</p>
+        <small>Addis Ababa</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Dell XPS 13</h3>
+        <p class="price">ETB 18,000</p>
+        <small>Oromia</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>HP Pavilion</h3>
+        <p class="price">ETB 12,000</p>
+        <small>Amhara</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Lenovo ThinkPad</h3>
+        <p class="price">ETB 15,500</p>
+        <small>Addis Ababa</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>MacBook Pro 2021</h3>
+        <p class="price">ETB 25,000</p>
+        <small>Addis Ababa</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Dell XPS 13</h3>
+        <p class="price">ETB 18,000</p>
+        <small>Oromia</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>HP Pavilion</h3>
+        <p class="price">ETB 12,000</p>
+        <small>Amhara</small>
+      </div>
+      <div class="card">
+        <button class="favorite-btn">
+            <i class="fa fa-heart"></i>
+        </button>
+        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
+        <h3>Lenovo ThinkPad</h3>
+        <p class="price">ETB 15,500</p>
+        <small>Addis Ababa</small>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>
+        Browse laptops effortlessly and get AI-powered summaries to help you make smart tech choices.
+      </p>
+    </div>
 
-    <!-- Mobile toggle (CSS-only) -->
-    <input id="nav-toggle" type="checkbox" hidden>
-    <label for="nav-toggle" class="hamburger" aria-label="Menu">☰</label>
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Laptops</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
 
-    <!-- Right-side menu -->
-    <nav class="menu">
-      <a href="/home/">Home</a>
-      <a href="#">About</a>
-      {% if request.user.is_authenticated %}
-        <a class="btn" href="/logout/">Logout</a>
-      {% else %}
-        <a href="/login/">Sign in</a>
-        <a class="btn" href="/signup/">Register</a>
-      {% endif %}
-    </nav>
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/monetizeyournetwork?_l=en_US"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://t.me/C_ONNEC_T"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
   </div>
-</header>
 
-<!-- Spacer so content isn’t hidden under fixed bar -->
-<div class="topbar-spacer"></div>
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 CONNECT&trade; All rights reserved.</p>
+  </div>
+</footer>
+
+{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'laptops/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'laptops/css/home.css' %}">
 {% endblock %}
