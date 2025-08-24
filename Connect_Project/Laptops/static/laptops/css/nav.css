@@ -77,7 +77,7 @@
   font-weight: 700;
   cursor: pointer;
 }
-.search button:hover { filter: brightness(1.2); }
+.search button:hover { filter: brightness(1.5); }
 
 /* Menu (right side) */
 .menu {

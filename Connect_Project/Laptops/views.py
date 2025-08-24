@@ -3,4 +3,5 @@ from .models import Laptop
 # Create your views here.
 
 def home(request):
-    return render(request,"laptops/home.html")
+    laptops = Laptop.objects.all()
+    return render(request,"laptops/home.html", {'laptops': laptops})

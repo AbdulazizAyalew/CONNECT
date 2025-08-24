@@ -18,118 +18,23 @@
   <section class="laptop-list">
     <h2>Latest Laptops</h2>
     <div class="card-grid">
-      <!-- Example cards (later you’ll loop Django objects here) -->
+      {% for laptop in laptops %}
       <div class="card">
         <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
+          <i class="fa fa-heart"></i>
         </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>MacBook Pro 2021</h3>
-        <p class="price">ETB 25,000</p>
-        <small>Addis Ababa</small>
+        <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
+        <h3>{{ laptop.name }}</h3>
+        <p class="price">ETB {{ laptop.price }}</p>
+        <small>{{ laptop.processor }}</small>
       </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Dell XPS 13</h3>
-        <p class="price">ETB 18,000</p>
-        <small>Oromia</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>HP Pavilion</h3>
-        <p class="price">ETB 12,000</p>
-        <small>Amhara</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Lenovo ThinkPad</h3>
-        <p class="price">ETB 15,500</p>
-        <small>Addis Ababa</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>MacBook Pro 2021</h3>
-        <p class="price">ETB 25,000</p>
-        <small>Addis Ababa</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Dell XPS 13</h3>
-        <p class="price">ETB 18,000</p>
-        <small>Oromia</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>HP Pavilion</h3>
-        <p class="price">ETB 12,000</p>
-        <small>Amhara</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Lenovo ThinkPad</h3>
-        <p class="price">ETB 15,500</p>
-        <small>Addis Ababa</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>MacBook Pro 2021</h3>
-        <p class="price">ETB 25,000</p>
-        <small>Addis Ababa</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Dell XPS 13</h3>
-        <p class="price">ETB 18,000</p>
-        <small>Oromia</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>HP Pavilion</h3>
-        <p class="price">ETB 12,000</p>
-        <small>Amhara</small>
-      </div>
-      <div class="card">
-        <button class="favorite-btn">
-            <i class="fa fa-heart"></i>
-        </button>
-        <img src="https://i.pcmag.com/imagery/roundups/02naaOkVLe7DIiejFUyDPJp-64..v1734989633.jpg" alt="Laptop">
-        <h3>Lenovo ThinkPad</h3>
-        <p class="price">ETB 15,500</p>
-        <small>Addis Ababa</small>
-      </div>
+      {% empty %}
+      <p>No laptops found.</p>
+      {% endfor %}
     </div>
   </section>
 </main>
+
 <footer class="footer">
   <div class="footer-container">
     <!-- About Section -->
