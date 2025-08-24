@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Fixed Top Bar -->
+<header class="topbar">
+  <div class="topbar__inner">
+    <!-- Brand -->
+    <a class="brand" href="/home/">
+      Connect
+    </a>
+
+    <!-- Search (wire up later to Meilisearch) -->
+    <form class="search" action="/search/" method="get">
+      <input name="q" type="text" placeholder="Search laptops…">
+      <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+    </form>
+
+    <!-- Mobile toggle (CSS-only) -->
+    <input id="nav-toggle" type="checkbox" hidden>
+    <label for="nav-toggle" class="hamburger" aria-label="Menu">☰</label>
+
+    <!-- Right-side menu -->
+    <nav class="menu">
+      <a href="/home/">Home</a>
+      <a href="#">About</a>
+      {% if request.user.is_authenticated %}
+        <a class="btn" href="/logout/">Logout</a>
+      {% else %}
+        <a href="/login/">Sign in</a>
+        <a class="btn" href="/signup/">Register</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer so content isn’t hidden under fixed bar -->
+<div class="topbar-spacer"></div>
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'laptops/css/nav.css' %}">
+{% endblock %}

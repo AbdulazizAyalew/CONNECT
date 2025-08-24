@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ laptop.name }} - Details{% endblock %}
+
+{% block content %}
+<h1>{{ laptop.name }}</h1>
+<p>{{ laptop.description }}</p>
+<p>Price: ${{ laptop.price }}</p>
+<a href="{% url 'laptops:home' %}">Back to Home</a>
+{% endblock %}

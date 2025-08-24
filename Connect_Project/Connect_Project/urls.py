@@ -28,6 +28,7 @@ urlpatterns = [
     path('ai-features/',include('ai_features.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('users.urls')),
+    path('home/', include("laptops.urls")), 
 ]
 
 if settings.DEBUG:
