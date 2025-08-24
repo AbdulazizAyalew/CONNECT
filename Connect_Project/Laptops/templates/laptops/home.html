@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".favorite-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+      });
+    });
+  });
+</script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+{% block content %}
+{% include "laptops/nav.html" %}  <!-- Your navbar -->
+
+<main class="main-content">
+  <section class="laptop-list">
+    <h2>Latest Laptops</h2>
+    <div class="card-grid">
+      {% for laptop in laptops %}
+      <div class="card">
+        <button class="favorite-btn">
+          <i class="fa fa-heart"></i>
+        </button>
+        <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
+        <h3>{{ laptop.name }}</h3>
+        <p class="price">ETB {{ laptop.price }}</p>
+        <small>{{ laptop.processor }}</small>
+      </div>
+      {% empty %}
+      <p>No laptops found.</p>
+      {% endfor %}
+    </div>
+    
+  </section>
+   <div class="pagination">
+        {% if laptops.has_previous %}
+            <!-- <a href="?page=1">&laquo; First</a> -->
+            <a href="?page={{ laptops.previous_page_number }}">&laquo; Previous</a>
+        {% endif %}
+
+        <span class="current-page">
+            Page {{ laptops.number }} of {{ laptops.paginator.num_pages }}
+        </span>
+
+        {% if laptops.has_next %}
+            <a href="?page={{ laptops.next_page_number }}">Next &raquo;</a>
+            <!-- <a href="?page={{ laptops.paginator.num_pages }}">Last &raquo;</a> -->
+        {% endif %}
+    </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>
+        Browse laptops effortlessly and get AI-powered summaries to help you make smart tech choices.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Laptops</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/monetizeyournetwork?_l=en_US"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://t.me/C_ONNEC_T"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 CONNECT&trade; All rights reserved.</p>
+  </div>
+</footer>
+
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'laptops/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'laptops/css/home.css' %}">
+{% endblock %}

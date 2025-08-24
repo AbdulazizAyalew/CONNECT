@@ -1,0 +1,215 @@
+/* Main body */
+.main-content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Section title */
+.laptop-list h2 {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-left: 6px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* Grid of cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* always equal columns */
+  gap: 20px;
+  align-items: stretch; /* ensures cards in same row align */
+}
+
+/* Individual card */
+/* .card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+} */
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  height: 350px; /* keeps consistent card height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ stack items naturally */
+  gap: 10px; /* ✅ optional, adds a small consistent gap between elements */
+  padding: 15px; /* optional: controls inner spacing */
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+
+/* Card content */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--accent);
+}
+.card h3 {
+  margin: 12px 0 6px;
+  color: #111;
+}
+.card p.price {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.card small {
+  color: #555;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Favorite (heart) button */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.favorite-btn:hover {
+  color: #fd995b; /* hover orange */
+}
+
+.favorite-btn.active {
+  color: #ffcc00; /* yellow when favorited */
+}
+
+/* Ensure card is relative so button stays inside */
+
+/* Footer Styles */
+.footer {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 40px 20px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #ff8c42;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #ddd;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background: #fd995b;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background: #f1b793;
+}
+
+.current-page {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+

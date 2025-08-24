@@ -1,6 +1,8 @@
 # users/urls.py
 from django.urls import path
+from . import views
 
+app_name = "laptops"
 urlpatterns = [
-    # Your URL patterns will go here
+    path('', views.home, name='home'),
 ]
