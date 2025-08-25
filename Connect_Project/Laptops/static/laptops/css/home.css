@@ -97,7 +97,6 @@
 
 
 .favorite-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
   color: #fd995b;
 }
 
@@ -220,3 +219,53 @@
 }
 
 
+/* Filter Section Styles */
+.laptop-filters {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+}
+
+
+.filter-container select,
+.filter-container input {
+  padding: 8px 12px;
+  border: 1px solid #f1b793; /* Thin border with your color */
+  border-radius: 5px;
+  font-size: 0.9rem;
+  outline: none; /* Remove default outline */
+}
+
+.filter-container .price-input {
+  width: 100px;
+}
+
+.filter-container button.reset-filters {
+  padding: 8px 15px;
+  background-color: #1e1a17;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-container button.reset-filters:hover {
+  background-color: #33373b;
+}
+
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
