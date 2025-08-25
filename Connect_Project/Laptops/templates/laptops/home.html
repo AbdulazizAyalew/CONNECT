@@ -19,15 +19,19 @@
     <h2>Latest Laptops</h2>
     <div class="card-grid">
       {% for laptop in laptops %}
-      <div class="card">
-        <button class="favorite-btn">
-          <i class="fa fa-heart"></i>
-        </button>
-        <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
-        <h3>{{ laptop.name }}</h3>
-        <p class="price">ETB {{ laptop.price }}</p>
-        <small>{{ laptop.processor }}</small>
-      </div>
+      
+        <div class="card">
+          <div class="card-img-container">
+            <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
+            <button class="favorite-btn">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+          <h3>{{ laptop.name }}</h3>
+          <p class="price">ETB {{ laptop.price }}</p>
+          <small>{{ laptop.processor }}</small>
+        </div>
+
       {% empty %}
       <p>No laptops found.</p>
       {% endfor %}
