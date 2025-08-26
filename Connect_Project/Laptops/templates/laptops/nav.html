@@ -10,10 +10,12 @@
     </a>
 
     <!-- Search (wire up later to Meilisearch) -->
-    <form class="search" action="/search/" method="get">
-      <input name="q" type="text" placeholder="Search laptops…">
+    <form class="search" action="/home/" method="get">
+      <input name="q" type="text" placeholder="Search laptops…" value="{{ query }}" autocomplete="off">
       <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
     </form>
+
+
 
     <!-- Mobile toggle (CSS-only) -->
     <input id="nav-toggle" type="checkbox" hidden>
