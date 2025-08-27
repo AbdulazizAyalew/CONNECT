@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'laptops/css/home.css' %}">
+</head>
+<body>
+    <header>
+        <!-- BASE TEMPLATE CHECK -->
+
+    </header>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>© 2025 My Site</p>
+    </footer>
+</body>
+</html>

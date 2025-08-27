@@ -10,24 +10,73 @@
   });
 </script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Filter Section -->
+
 
 {% block content %}
 {% include "laptops/nav.html" %}  <!-- Your navbar -->
+<section class="laptop-filters">
+  <div class="filter-container">
+    <select name="brand" id="brand-filter">
+      <option value="">All Brands</option>
+      <option value="hp">HP</option>
+      <option value="dell">Dell</option>
+      <option value="lenovo">Lenovo</option>
+      <!-- Add more brands as needed -->
+    </select>
 
+    <select name="model" id="model-filter">
+      <option value="">All Models</option>
+      <option value="elitebook">EliteBook</option>
+      <option value="xps">XPS</option>
+      <option value="thinkpad">ThinkPad</option>
+      <!-- Add more models -->
+    </select>
+
+    <select name="core" id="core-filter">
+      <option value="">All Cores</option>
+      <option value="i3">i3</option>
+      <option value="i5">i5</option>
+      <option value="i7">i7</option>
+      <option value="i9">i9</option>
+    </select>
+
+    <select name="generation" id="generation-filter">
+      <option value="">All Generations</option>
+      <option value="6th">6th</option>
+      <option value="7th">7th</option>
+      <option value="8th">8th</option>
+      <option value="10th">10th</option>
+      <option value="11th">11th</option>
+      <option value="12th">12th</option>
+      <option value="13th">13th</option>
+      <!-- Add more generations -->
+    </select>
+
+    <input type="number" name="min-price" placeholder="Min Price" class="price-input">
+    <input type="number" name="max-price" placeholder="Max Price" class="price-input">
+
+    <button class="reset-filters">Reset Filters</button>
+  </div>
+</section>
 <main class="main-content">
   <section class="laptop-list">
     <h2>Latest Laptops</h2>
     <div class="card-grid">
       {% for laptop in laptops %}
-      <div class="card">
-        <button class="favorite-btn">
-          <i class="fa fa-heart"></i>
-        </button>
-        <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
-        <h3>{{ laptop.name }}</h3>
-        <p class="price">ETB {{ laptop.price }}</p>
-        <small>{{ laptop.processor }}</small>
-      </div>
+
+        <div class="card">
+          <div class="card-img-container">
+            <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
+            <button class="favorite-btn">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+          <h3>{{ laptop.name }}</h3>
+          <p class="price">ETB {{ laptop.price }}</p>
+          <small>Core {{ laptop.core }} {{ laptop.generation }} generation</small>
+        </div>
+
       {% empty %}
       <p>No laptops found.</p>
       {% endfor %}
@@ -36,8 +85,7 @@
   </section>
    <div class="pagination">
         {% if laptops.has_previous %}
-            <!-- <a href="?page=1">&laquo; First</a> -->
-            <a href="?page={{ laptops.previous_page_number }}">&laquo; Previous</a>
+            <a href="?q={{ query }}&page={{ laptops.previous_page_number }}">&laquo; Previous</a>
         {% endif %}
 
         <span class="current-page">
@@ -45,10 +93,11 @@
         </span>
 
         {% if laptops.has_next %}
-            <a href="?page={{ laptops.next_page_number }}">Next &raquo;</a>
-            <!-- <a href="?page={{ laptops.paginator.num_pages }}">Last &raquo;</a> -->
+            <a href="?q={{ query }}&page={{ laptops.next_page_number }}">Next &raquo;</a>
         {% endif %}
     </div>
+
+
 </main>
 
 <footer class="footer">

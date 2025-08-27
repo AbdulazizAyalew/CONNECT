@@ -4,7 +4,9 @@ from django.db import models
 class Laptop(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=100)
-    processor = models.CharField(max_length=50)
+    model = models.CharField(max_length=255,null=True, blank=True)
+    core = models.CharField(max_length=255, null=True, blank=True)
+    generation = models.CharField(max_length=10,null=True, blank=True)
     ram = models.IntegerField()
     ram_type = models.CharField(max_length=256)
     storage = models.IntegerField()
