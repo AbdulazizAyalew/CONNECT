@@ -1,6 +1,6 @@
 # CONNECT – AI-Powered Laptop Discovery Platform
 
-## 📌 Overview
+##  Overview
 **CONNECT** is a web-based platform designed to help users research and discover the best laptops for their needs.  
 It features **AI-generated specifications summaries**, **natural language search**, and **personalized recommendations**, making laptop research faster and more beginner-friendly.  
 
@@ -9,7 +9,7 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 
 ---
 
-## 🚀 Features
+##  Features
 - **Laptop Listings** – Detailed specs, images, and prices.
 - **Advanced Filtering** – Search by price, RAM, processor, storage, and more.
 - **AI-Powered Recommendations** – Suggests laptops based on user preferences.
@@ -21,7 +21,7 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 **Backend:** Django, Django REST Framework  
 **Frontend:** HTML, CSS 
 **Database:** MySQL
@@ -40,7 +40,7 @@ Initially, laptops are posted by the platform owner, with future plans to allow 
 
 ---
 
-## 📂 Project Structure (Apps)
+##  Project Structure (Apps)
 - `laptops` – Manages listings, filtering, and search.
 - `users` – Handles authentication, favorites, and subscriptions.
 - `reviews` – Stores and displays reviews/comments.
